@@ -1,0 +1,62 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+
+<!-- Head -->
+<%-include("./parts/head") %> 
+<!-- //Head -->
+
+<!-- Body -->
+<body>
+
+    <%- include("./parts/header.ejs") %> 
+    <section class="main">
+        
+
+        <div class="bottom-grid">
+            <div class="logo">
+                <h1 class="title"> <a href="index.html"> Viva pets</a></h1>
+             
+            </div>
+        </div>
+        <div class="content-w3ls">
+            
+
+            <div class="content-bottom">
+                <form action="/login-account" method="POST">
+                    <div class="input-group">
+                        <span class="fa fa-user" aria-hidden="true"></span>
+                        <div class="input-box">
+                            <input name="email" id="text1" type="text" value="" placeholder="email" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <span class="fa fa-lock" aria-hidden="true"></span>
+                        <div class="input-box">
+                            <input name="password" id="myInput" type="Password" placeholder="senha">
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <button type="submit" class="btn">login</button>
+                    </div>
+                   
+                    <ul class="list-login-bottom">
+                        <li class="">
+                            <a href="/cadastro" class="">Cadastro</a>
+                        </li>
+                       
+                    </ul>
+                </form>
+            </div>
+        </div>
+       
+    </section>
+    <%- include("./parts/footer.ejs") %> 
+
+</body>
+<!-- //Body -->
+
+</html>

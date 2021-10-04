@@ -1,0 +1,64 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+-->
+<!DOCTYPE html>
+<html lang="zxx">
+
+<!-- Head -->
+<%-include("./parts/head") %> 
+<!-- //Head -->
+
+<!-- Body -->
+<body>
+    <%- include("./parts/header.ejs") %> 
+    <section class="main">
+
+        <div class="bottom-grid">
+            <div class="logo">
+                <h1> <a href="index.html"> Viva pets </a></h1>
+                <h1>Cadastro de Usuário</h1>
+            </div>
+        </div>
+        <div class="content-w3ls">
+            
+
+            <div class="content-bottom">
+                <form action="/create-account" method="POST">
+                    <div class="input-group">
+                        <span class="fa fa-user" aria-hidden="true"></span>
+                        <div class="input-box">
+                            <input name="name" id="texxt1" type="text" value="" placeholder="nome" required>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <span class="fa fa-lock" aria-hidden="true"></span>
+                        <div class="input-box">
+                            <input name="email" class="input" type="text" placeholder="email">
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <span class="fa fa-lock" aria-hidden="true"></span>
+                        <div class="input-box">
+                            <input name="password" class="input" type="Password" placeholder="senha">
+                        </div>
+                    </div>
+                    <div class="input-box">
+                        <button type="submit" class="btn">Cadastrar</button>
+                    </div>
+                    <ul class="list-login-bottom">
+                        <li class="">
+                            <a href="/login" class="">Fazer login</a>
+                        </li>
+                
+                    </ul>
+                </form>
+            </div>
+        </div>
+       
+    </section>
+    <%- include("./parts/footer.ejs") %> 
+</body>
+<!-- //Body -->
+
+</html>

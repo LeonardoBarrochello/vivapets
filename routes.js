@@ -9,29 +9,33 @@ route.use(session({secret:'key',saveUninitialized: false,resave: false}))
 
 
 route.get("/", (req,res) =>{
-    res.render("main")
-    
+    if(req.session.login){
+        res.render("main",{sessao:req.session.login})
+    }else{
+        res.render("main",{sessao:null})
+    }
+ 
 })
-route.get("/main" , (req,res) => {
-    res.render("main")
+
+route.get("/logout",(req,res)=>{
+    req.session.destroy()
+    res.redirect("/")
 })
 
 route.get("/sistema" , (req,res) => {
-    res.render("sistema")
+    res.render("sistema",{sessao:req.session.login})
 })
 
 route.get("/aboutus" , (req,res) => {
     res.render("aboutus")
 })
 
-
-
 route.get("/login",(req,res)=>{
-        res.render("login")
+    res.render("login",{sessao:null})
 })
 
 route.get("/cadastro",(req,res)=>{
-    res.render("cadastro")
+    res.render("cadastro",{sessao:null})
 })
 
 route.post("/create-account", cadastroLogin.create)

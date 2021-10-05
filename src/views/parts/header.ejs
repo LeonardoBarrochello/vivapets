@@ -1,14 +1,22 @@
 <header class="header">
     <div class="logo">
-        <h1><a href="/">Viva Pets</a></h1>
+        <h1><a id="word-1" href="/">Viva <span id="word-2">Pets</span>.</a></h1>
     </div>
     <nav class="navbar">
         <ul>
               <li><a href="/">Home</a></li>
               <li><a href="/aboutus">Animais</a></li>
-              <li><a href="/sistema">Sistema </a></li>
-              <li><a href="/login">Login</a></li>
-              <li><a href="/cadastro">Cadastro</a></li>
+              <% if(sessao) {%>
+                <li><a href="/sistema">Sistema </a></li>   
+               <% } %>   
+               <% if(!sessao) {%>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/cadastro">Cadastro</a></li>
+               <% }else{%>    
+                <span>Olá <%- sessao.name %>  |</span>
+                <a id="logout" href="/logout"> Fazer Logout</a>
+                <% } %>         
+            
         </ul>
     </nav>
 </header>

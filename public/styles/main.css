@@ -3,7 +3,15 @@
     padding: 0;  
   }
   
-  
+html{
+    height: 100%;
+}
+  body{
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+      min-height: 100%;
+  }
 .header{
 
     z-index: 3;
@@ -127,6 +135,7 @@
 
 .footer{
     height: 60px;
+    width: 100%;
     background: #ccc;
     display: flex;
     justify-content: center;

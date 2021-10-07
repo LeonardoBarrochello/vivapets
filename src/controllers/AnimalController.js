@@ -28,11 +28,12 @@ module.exports = {
 
     async edit(req,res){
         const db = await Database()
+        var id = req.params.id
         var {name,color,type,breed} = req.body
-        await db.run(`UPDATE animais SET nome = '${name}'`)
-        await db.run(`UPDATE animais SET cor = '${color}'`)
-        await db.run(`UPDATE animais SET tipo = '${type}'`)
-        await db.run(`UPDATE animais SET raca = '${breed}'`)
+        await db.run(`UPDATE animais SET nome = '${name}' WHERE animal_id = ${id}`)
+        await db.run(`UPDATE animais SET cor = '${color}' WHERE animal_id = ${id}`)
+        await db.run(`UPDATE animais SET tipo = '${type}' WHERE animal_id = ${id}`)
+        await db.run(`UPDATE animais SET raca = '${breed}' WHERE animal_    id = ${id}`)
         res.redirect("/sistema")
        
     }

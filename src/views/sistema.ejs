@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <%- include("./parts/head.ejs") %> 
+
+
 <body>
-    <%- include("./parts/header.ejs") %> 
+
+<%- include("./parts/header.ejs") %> 
 <div class="container-xl">
 	
 	   
-	<div class="table-responsive">
+<div class="table-responsive">
 		<div class="table-wrapper">
 			<div class="table-title">
 				<div class="row">
@@ -49,22 +52,26 @@
 							<td><%= element.tipo %></td>
 							<td><%= element.raca %></td>
 							<td>
-								<form action="/delete-animal/<%=element.animal_id %>" method="POST">
-								<a href="#editEmployeeModal" class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-								<button><i class="material-icons"  title="Delete">&#xE872;</i></button>
-								</form>
+								<a href="#editEmployeeModal"  class="edit" data-toggle="modal" data-id="<%= element.animal_id %>"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+								
+								<a href="#deleteEmployeeModal" class="delete" data-toggle="modal" data-id="<%= element.animal_id %>" ><i class="material-icons"  title="Delete">&#xE872;</i></a>
+								
 							</td>
-					<% });%>
+						</tr>
+					<% })%>
 					
-					</tr>
+					
 					
 				</tbody>
 			</table>
 			
 		</div>
-	</div>        
+</div> 
+
 </div>
-<!-- Edit Modal HTML -->
+
+
+
 <div id="addEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
@@ -99,11 +106,11 @@
 		</div>
 	</div>
 </div>
-<!-- Edit Modal HTML -->
+
 <div id="editEmployeeModal" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form action="/edit-animal" method="POST">
+			<form class="form_edit" action="" method="POST">
 				<div class="modal-header">						
 					<h4 class="modal-title">Editar dados animal</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -136,8 +143,27 @@
 		</div>
 	</div>
 </div>
-<!-- Delete Modal HTML -->
+
+<div id="deleteEmployeeModal" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form class="form_delete" action="" method="POST">
+				<div class="modal-header">						
+					<h4 class="modal-title">Tem certeza que deseja excluir este animal dos registros?</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-footer">
+					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancelar">
+					<input type="submit" class="btn btn-info" value="Excluir">
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
 
 <%- include("./parts/footer.ejs") %> 
 </body>
+
+
 </html>

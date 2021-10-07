@@ -26,12 +26,13 @@ route.get("/logout",(req,res)=>{
 })
 
 route.get("/sistema" , async (req,res) => {
-    if(req.session.login){
-        const animals = await viewAllAnimals.view()
-        res.render("sistema",{sessao:req.session.login,allanimals:animals})
+   /*  if(req.session.login){
+       
     }else{
         res.redirect("/")
-    }
+    } */
+    const animals = await viewAllAnimals.view()
+    res.render("sistema",{sessao:req.session.login,allanimals:animals})
     
 })
 
@@ -51,6 +52,6 @@ route.post("/create-account", cadastroLogin.create)
 route.post("/login-account",loginController.enter)
 route.post("/create-animal",animalController.create)
 route.post("/delete-animal/:id",animalController.delete)
-route.post("/edit-animal",animalController.edit)
+route.post("/edit-animal/:id",animalController.edit)
 
 module.exports = route

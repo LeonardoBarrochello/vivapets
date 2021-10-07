@@ -1,23 +1,16 @@
-$(document).ready(function(){
-	// Activate tooltip
-	$('[data-toggle="tooltip"]').tooltip();
-	
-	// Select/Deselect checkboxes
-	var checkbox = $('table tbody input[type="checkbox"]');
-	$("#selectAll").click(function(){
-		if(this.checked){
-			checkbox.each(function(){
-				this.checked = true;                        
-			});
-		} else{
-			checkbox.each(function(){
-				this.checked = false;                        
-			});
-		} 
-	});
-	checkbox.click(function(){
-		if(!this.checked){
-			$("#selectAll").prop("checked", false);
-		}
-	});
-});
+import  Modal  from './modal.js'
+const modal = Modal()
+const deleteButtons = document.querySelectorAll("a.delete")
+
+deleteButtons.forEach(element=>{
+
+    element.addEventListener("click",(event)=> handleClick(event,false))
+})
+
+
+function handleClick(event){
+    const animalId = event.target.dataset.id
+    const form = document.querySelector(".modal form")
+    form.setAttribute("action",`/delete-animal/${animalId}`)
+    modal.open(event)
+}

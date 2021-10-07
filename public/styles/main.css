@@ -5,6 +5,9 @@
   
   
 .header{
+
+    z-index: 3;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     background-color:#78cdff;

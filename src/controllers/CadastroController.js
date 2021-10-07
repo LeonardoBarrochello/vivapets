@@ -7,6 +7,7 @@ module.exports = {
     async create(req,res){
         const db = await Database()
         var {name,email,password} = req.body
+        console.log(name,email,password)
         name = name.toUpperCase()
         let verifyCreate = await db.all(`SELECT * FROM usuarios WHERE email = '${email}' `)
         if( !verifyCreate.length > 0){

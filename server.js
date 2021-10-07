@@ -10,7 +10,7 @@ server.set("views" , path.join(__dirname,'src/views'))  // altera o caminho padr
 server.use(express.urlencoded({extended:true}))
 server.use(route)   //informa para o express usar o arquivo route senão não funciona 
 
-
+    
 server.listen(5000,()=>{
     console.log("Rodando!!")   
 })

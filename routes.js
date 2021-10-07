@@ -3,9 +3,12 @@ const { resolveInclude } = require('ejs')
 const route = express.Router()  //gerenciador de rotas do express
 const cadastroLogin = require("./src/controllers/CadastroController")
 const loginController = require("./src/controllers/LoginController")
-const animalController = require("./src/controllers/CadastrarAnimalController")
+const animalController = require("./src/controllers/AnimalController")
+const viewAllAnimals = require("./src/controllers/ConsultaAnimaisController")
 const session = require('express-session')
 route.use(session({secret:'key',saveUninitialized: false,resave: false}))
+route.use(express.json())
+ 
 
 
 route.get("/", (req,res) =>{
@@ -22,8 +25,14 @@ route.get("/logout",(req,res)=>{
     res.redirect("/")
 })
 
-route.get("/sistema" , (req,res) => {
-    res.render("sistema",{sessao:req.session.login})
+route.get("/sistema" , async (req,res) => {
+    if(req.session.login){
+        const animals = await viewAllAnimals.view()
+        res.render("sistema",{sessao:req.session.login,allanimals:animals})
+    }else{
+        res.redirect("/")
+    }
+    
 })
 
 route.get("/aboutus" , (req,res) => {
@@ -41,6 +50,7 @@ route.get("/cadastro",(req,res)=>{
 route.post("/create-account", cadastroLogin.create)
 route.post("/login-account",loginController.enter)
 route.post("/create-animal",animalController.create)
-
+route.post("/delete-animal/:id",animalController.delete)
+route.post("/edit-animal",animalController.edit)
 
 module.exports = route

@@ -1,5 +1,5 @@
 
-const Database = require("../db/config")
+const Database = require("../database/config")
 
 
 module.exports = {

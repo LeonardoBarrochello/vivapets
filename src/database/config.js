@@ -3,7 +3,7 @@ const { open } = require("sqlite");
 
 module.exports = () => 
     open({
-        filename: './src/db/vivapets.sqlite',
+        filename: './src/database/vivapets.sqlite',
         driver: sqlite3.Database,
     });
     

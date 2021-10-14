@@ -1,5 +1,5 @@
 const express = require("express")
-const Database = require("../db/config")
+const Database = require("../database/config")
 
 
 module.exports = {
@@ -33,8 +33,14 @@ module.exports = {
         await db.run(`UPDATE animais SET nome = '${name}' WHERE animal_id = ${id}`)
         await db.run(`UPDATE animais SET cor = '${color}' WHERE animal_id = ${id}`)
         await db.run(`UPDATE animais SET tipo = '${type}' WHERE animal_id = ${id}`)
-        await db.run(`UPDATE animais SET raca = '${breed}' WHERE animal_    id = ${id}`)
+        await db.run(`UPDATE animais SET raca = '${breed}' WHERE animal_id = ${id}`)
         res.redirect("/sistema")
        
+    },
+
+    async deletall(req,res){
+        const db = await Database()
+        await db.run(`delete from animais`)
+        res.redirect("/sistema")
     }
 }

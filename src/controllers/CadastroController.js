@@ -1,5 +1,5 @@
 const express = require("express")
-const Database = require("../db/config")
+const Database = require("../database/config")
 const send = require('../controllers/SendEmailController')
 
 module.exports = {

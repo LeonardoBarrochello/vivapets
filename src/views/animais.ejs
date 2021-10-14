@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("./parts/head.ejs") %> 
+<body>
+  
+      <%- include("./parts/header.ejs") %> 
+           
+                  <ul class="list">
+                        <% allanimals.forEach(element => { %>
+                              <li class="clearfix">
+                                    <section class="left">
+                                          <div class="animal-photo">
+                                                <% if(element.tipo == 'Cachorro' || element.tipo == 'cachorro'){%> 
+                                                      <img src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-dog-dog-and-cat-justicon-flat-justicon-9.png"/>
+                                                <% } else if(element.tipo == 'Gato' || element.tipo == 'gato') { %>
+                                                      <img src="https://img.icons8.com/external-justicon-flat-justicon/64/000000/external-cat-dog-and-cat-justicon-flat-justicon-10.png"/>
+                                                <% } %> 
+                                          
+                              
+                                          </div>
+                                          <h3><%= element.nome %></h3>
+                                    </section>
+                              
+                                    <section class="right">
+                                    <span class="price">Raça : <%= element.raca %> </span>
+                                     <span class="actions">
+                                          <a href="#viewAnimalModal" data-toggle="modal" class="more-info" data-id ="<%= element.animal_id %>"  class="firstbtn">Mais informações</a>
+                                          <span>|</span>
+                                          <a class="adopt" data-id ="<%= element.animal_id %>" href="javascript:void(0);">Adotar</a>
+                                    </span>
+                                    </section>
+                              </li>
+                        <% })%>
+                  </ul>
+     
+      
+      <%- include("./parts/footer.ejs") %> 
+        
+<div id="viewAnimalModal" class="modal fade">
+            <div class="modal-dialog">
+                  <div class="modal-content">
+                        <form class="form_view" action="" method="POST">
+                              <div class="modal-header">						
+                                    <h4 class="modal-title">Informações do Animal</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                              </div>
+                              <div class="animal-infos">
+                                    <ul>
+
+                                    </ul>
+
+                              </div>
+                              <div class="modal-footer">
+                                    <input type="button" class="btn btn-default" data-dismiss="modal" value="Sair">
+                                    <input type="button" data-dismiss="modal" class="btn btn-info" value="Ok">
+                              </div>
+                        </form>
+                  </div>
+            </div>
+</div>
+</body>
+</html>

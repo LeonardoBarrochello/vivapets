@@ -1,4 +1,4 @@
-const Database =  require('../db/config')
+const Database =  require('../database/config.js')
 const express = require('express')
 const session = require('express-session')
 const { OPEN_READWRITE } = require('sqlite3')
@@ -19,7 +19,7 @@ module.exports = {
                             user : verifyUser.email,
                             name : verifyUser.name
                         }
-                    res.redirect(`/`) //ver pq o session n funciona
+                    res.redirect(`/`) 
            }else{
                 res.render("parts/passincorrect")
            }

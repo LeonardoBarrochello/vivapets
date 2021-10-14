@@ -10,6 +10,10 @@ route.use(session({secret:'key',saveUninitialized: false,resave: false}))
 route.use(express.json())
  
 
+route.get("/allAnimals" ,async (req,res) =>{
+    const animals = await viewAllAnimals.view()
+    return  res.json(animals)
+})
 
 route.get("/", (req,res) =>{
     if(req.session.login){
@@ -26,18 +30,24 @@ route.get("/logout",(req,res)=>{
 })
 
 route.get("/sistema" , async (req,res) => {
-   /*  if(req.session.login){
+    if(req.session.login){
        
     }else{
         res.redirect("/")
-    } */
+    } 
     const animals = await viewAllAnimals.view()
     res.render("sistema",{sessao:req.session.login,allanimals:animals})
     
 })
 
-route.get("/aboutus" , (req,res) => {
-    res.render("aboutus")
+route.get("/animais" ,async (req,res) => {
+    const animals = await viewAllAnimals.view()
+    if(req.session.login){
+        res.render("animais",{sessao:req.session.login,allanimals:animals})
+    }else{
+        res.render("animais",{sessao:null,allanimals:animals})
+    }
+  
 })
 
 route.get("/login",(req,res)=>{

@@ -11,6 +11,6 @@ INSTRUÇÕES
 
 4 - Em seguida Rode ' npm install ' no terminal para instalar todas as depêndencias do package.json . 
 
-5 - Após isso rode ' yarn start ' no terminal para rodar o projeto.
+5 - Após isso rode ' npm start ' no terminal para rodar o projeto.
 
 6 - entre em http://localhost:5000/ para acessar o projeto .

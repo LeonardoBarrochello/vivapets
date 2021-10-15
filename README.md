@@ -1,7 +1,7 @@
 # vivapets
 
 
-=============================================   INSTRUÇÕES    =============================================================
+INSTRUÇÕES    
 
 1 - Para Rodar o projeto é necessário ter o NodeJS instalado em sua máquina. ----> https://nodejs.org/en/
 2 - Faça o download do zip do projeto .

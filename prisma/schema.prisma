@@ -1,0 +1,63 @@
+// This is your Prisma schema file
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./vivapetssystem.db"
+}
+
+model Usuario{
+    usuario_id String @id @default(uuid())
+    name String
+    email String
+    password String
+    @@map("usuarios")
+    dono Dono[]
+
+}
+
+model Dono{
+  dono_id String @id @default(uuid())
+  nome String
+  idade Int
+  endereco String
+  telefone String
+  cidade String
+  animals Animal[]
+  usuario Usuario @relation(fields: [usuario_dono_id] , references: [usuario_id])
+  adocao Adotar[]
+  @@map("dono")
+  usuario_dono_id String
+}
+
+model Animal{
+  animal_id String @id @default(uuid())
+  raca String
+  tipo String
+  nome String
+  cor String
+  animal_dono_id String
+  dono Dono @relation(fields: [animal_dono_id] , references: [dono_id])
+  adocao Adotar[]
+  @@map("animais")
+}
+
+
+
+
+
+model Adotar{
+  id String  @id @default(uuid())
+  created_at DateTime @default(now())
+  @@map("adocao")
+  animal_id String
+  animal Animal @relation(fields: [animal_id] , references: [animal_id])
+  dono Dono @relation(fields: [dono_id] , references: [dono_id])
+  dono_id String
+
+            
+}

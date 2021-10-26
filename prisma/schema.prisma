@@ -10,14 +10,14 @@ datasource db {
   url      = "file:./vivapetssystem.db"
 }
 
+
 model Usuario{
     usuario_id String @id @default(uuid())
     name String
     email String
     password String
+    dono Dono?
     @@map("usuarios")
-    dono Dono[]
-
 }
 
 model Dono{
@@ -28,10 +28,19 @@ model Dono{
   telefone String
   cidade String
   animals Animal[]
-  usuario Usuario @relation(fields: [usuario_dono_id] , references: [usuario_id])
-  adocao Adotar[]
-  @@map("dono")
-  usuario_dono_id String
+  adocao Adocao[]
+  usuario_id String
+  usuario Usuario @relation(fields: [usuario_id] , references: [usuario_id])
+
+}
+
+model Adocao{
+  id String @id @default(uuid())
+  data_adocao DateTime @default(now())
+  animal_id String
+  dono_id String
+  animal Animal @relation(fields: [animal_id] , references: [animal_id])
+  dono Dono @relation(fields: [dono_id] , references: [dono_id])
 }
 
 model Animal{
@@ -40,24 +49,8 @@ model Animal{
   tipo String
   nome String
   cor String
-  animal_dono_id String
-  dono Dono @relation(fields: [animal_dono_id] , references: [dono_id])
-  adocao Adotar[]
-  @@map("animais")
-}
-
-
-
-
-
-model Adotar{
-  id String  @id @default(uuid())
-  created_at DateTime @default(now())
-  @@map("adocao")
-  animal_id String
-  animal Animal @relation(fields: [animal_id] , references: [animal_id])
-  dono Dono @relation(fields: [dono_id] , references: [dono_id])
   dono_id String
-
-            
+  dono Dono @relation(fields: [dono_id] , references: [dono_id])
+  adocao Adocao?
+  @@map("animais")
 }

@@ -18,9 +18,12 @@ html{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    background-color:#78cdff;
+    background-color:rgb(68, 214, 240);
     align-items: center;
     height: 60px;
+}
+.header.home{
+    background-color: transparent;
 }
 .header .logo h1{
     margin-left: 10px;
@@ -41,7 +44,12 @@ html{
 .logo #word-2{
     color: #a43cc9;
 }
-
+.navbar a{
+    color: #e4e4e4;
+}
+.navbar span {
+    color: #cc8ee2;
+}
 .header .navbar ul li{
     transition : all 0.8s;
 
@@ -50,7 +58,7 @@ html{
 }
 .header .navbar ul li:hover{
     
-    border-bottom-color:  #01446b;
+    border-bottom-color:  #52ade2;
     margin-right: 15px;
   
 }
@@ -112,12 +120,13 @@ html{
     width: 100%;
     height: 100%;
     z-index: 1;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.6);
 }
 .section_title{
     position: relative;
     padding-top: 85px;
     padding-right: 40px;
+    margin-top:-60px;
     display: flex;
     flex-flow: column;
     justify-content: center;
@@ -129,15 +138,86 @@ html{
     height: 700px;
 }
 
+
+section.section-2 .container{
+    max-width: 1000px;
+}
+section.section-2{
+    width: 100%;
+    background-color: #472562;
+    padding: 0 2%;
+    max-height: 400px;
+}
+
+
+.text-section1{
+  width: 50%;
+  float:left;
+  position: relative;
+  left: 40px;
+  margin-top: 50px;
+  padding-left: 45px;
+  color: white;
+}
+
+.text-section1 h2{
+    font-size: 26px;
+    font-weight: 300;
+
+}
+
+.text-section1 p, .text-section1 label{
+    margin-top: 20px;
+    font-size: 16px;
+    
+}
+.text-section1 ul li{ 
+    padding-left: 10px;
+    font-size: 16px;
+    margin-top: 20px;
+    list-style: inside;
+}
+
+.text-section1 label{
+    cursor: pointer;
+}
+
+.device-section2{
+    position: relative;
+    top: -30px;
+    right:40px;
+    z-index: 2;
+    width: 50%;
+    height:430px;
+    float: left;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-image: url(../assets/device.png);
+}
+
+.botao1{
+    margin-left: 20px;
+    color: white;
+    line-height: 44px;
+    cursor: pointer;
+    text-align: center;
+    background-color: #FF703D;
+    width: 165px;
+    height: 44px;
+    border-radius: 25px;
+    margin-top: 15px;
+}
+
 .group-2 p{
     font-size: 20px;
 }
 
 .footer{
-    height: 60px;
     width: 100%;
+    padding:  0 2%;
     background: #ccc;
     display: flex;
+    height: 60px;
     justify-content: center;
     align-items: center;
 }

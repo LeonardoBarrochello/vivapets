@@ -50,5 +50,3 @@ deleteButtons.forEach(Element => Element.addEventListener("click",(e)=>
     
 }))
 
-
-//console.log(Element.getAttribute("data-id")

@@ -1,5 +1,5 @@
-import express from 'express'
-import route from './routes'
+const express = require('express')
+const  route  = require('./routes')
 require("dotenv").config();
 const server = express()
 const path = require('path')

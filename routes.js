@@ -67,4 +67,4 @@ route.post("/create-animal",animalController.create)
 route.post("/delete-animal/:id",animalController.delete)
 route.post("/edit-animal/:id",animalController.edit)
 
-export  default route
+module.exports = route

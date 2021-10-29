@@ -1,8 +1,6 @@
 const express = require("express")
-
 const Database = require("../database/config")
 const send = require('../controllers/SendEmailController')
-
 module.exports = {
 
     async create(req,res){
@@ -11,6 +9,7 @@ module.exports = {
         console.log(name,email,password)
         name = name.toUpperCase()
         let verifyCreate = await db.all(`SELECT * FROM usuarios WHERE email = '${email}' `)
+     
         if( !verifyCreate.length > 0){
             const bodyMessage = `
                                                 Olá ${name}!! Seja Bem vindo ao Viva Pets!!

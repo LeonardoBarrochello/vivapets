@@ -112,6 +112,7 @@ body {
     -ms-background-size: cover;
     min-height: 100vh;
     padding: 2em 0;
+    margin-top: -60px;
     position: relative;
     overflow-y: hidden;
     z-index: 1;

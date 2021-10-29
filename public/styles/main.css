@@ -10,6 +10,7 @@ html{
       display: flex;
       flex-flow: column;
       justify-content: space-between;
+      padding-right: 0 !important;
       min-height: 100%;
   }
 .header{
@@ -18,13 +19,11 @@ html{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    background-color:rgb(68, 214, 240);
+    background-color:transparent;
     align-items: center;
     height: 60px;
 }
-.header.home{
-    background-color: transparent;
-}
+
 .header .logo h1{
     margin-left: 10px;
     letter-spacing: 0.3rem;
@@ -48,17 +47,17 @@ html{
     color: #e4e4e4;
 }
 .navbar span {
-    color: #cc8ee2;
+    color: #000;
 }
 .header .navbar ul li{
-    transition : all 0.8s;
+    transition : all 0.5s;
 
     border-bottom: 3px solid transparent;
     margin-right: 15px;
 }
 .header .navbar ul li:hover{
     
-    border-bottom-color:  #52ade2;
+    border-bottom-color:  #a43cc9;
     margin-right: 15px;
   
 }
@@ -215,7 +214,7 @@ section.section-2{
 .footer{
     width: 100%;
     padding:  0 2%;
-    background: #ccc;
+    background: #472562;
     display: flex;
     height: 60px;
     justify-content: center;
@@ -223,6 +222,7 @@ section.section-2{
 }
 
 .footer p{
+    color: #fff;
     margin: 0 !important;
 }
 

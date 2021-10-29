@@ -1598,6 +1598,11 @@
   "resolved" "https://registry.npmjs.org/prepend-http/-/prepend-http-2.0.0.tgz"
   "version" "2.0.0"
 
+"prisma-client@^0.0.0":
+  "integrity" "sha512-tbK0ZaUt4E9IkQalS+2V5dv45lTcwxWNSXenRNEgSuzTJWW3T6SUgBfuk0gUS5wC07eQNEOU6/SVomVL/hsaHw=="
+  "resolved" "https://registry.npmjs.org/prisma-client/-/prisma-client-0.0.0.tgz"
+  "version" "0.0.0"
+
 "prisma@*", "prisma@^3.3.0":
   "integrity" "sha512-E7C9mXRwZVpcnSeJT533qGHUVrYULsE9ihFvAtQMuxhTXkxoRlMLyo/1ZOyeu9GdXP8DJ7ruLOw06kEs/N3dVg=="
   "resolved" "https://registry.npmjs.org/prisma/-/prisma-3.3.0.tgz"

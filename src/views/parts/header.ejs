@@ -5,9 +5,10 @@
     <nav class="navbar">
         <ul>
               <li><a href="/">Home</a></li>
-              <li><a href="/animais">Animais</a></li>
-              <% if(sessao) {%>
+             
+               <% if(sessao) {%>
                 <li><a href="/sistema">Sistema </a></li>   
+                <li><a href="/animais">Animais</a></li>
                <% } %>   
                <% if(!sessao) {%>
                 <li><a href="/login">Login</a></li>

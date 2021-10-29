@@ -48,7 +48,7 @@ route.get("/animais" ,async (req,res) => {
     if(req.session.login){
         res.render("animais",{sessao:req.session.login,allanimals:animals , page:'animais'})
     }else{
-        res.render("animais",{sessao:null,allanimals:animals , page:'animais'})
+        res.redirect("/")
     }
   
 })
@@ -66,5 +66,6 @@ route.post("/login-account",loginController.enter)
 route.post("/create-animal",animalController.create)
 route.post("/delete-animal/:id",animalController.delete)
 route.post("/edit-animal/:id",animalController.edit)
+route.post("/adopt-animal/:id/:userId",animalController.adoptAnimal)
 
 module.exports = route
